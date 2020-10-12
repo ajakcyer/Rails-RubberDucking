@@ -1,0 +1,16 @@
+
+<h1><%= @student.name %></h1>
+<h2>Mod: <%= @student.mod %></h2>
+
+<h3>Ducks Owned:</h3>
+
+<% if @student.ducks.present? %>
+<ul>
+    <% @student.ducks.each do |duck| %>
+        <li><%= link_to duck.name, duck_path(duck) %></li>
+    <% end %>
+</ul>
+<% else %>
+    <p>None :(</p>
+<% end %>
+
